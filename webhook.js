@@ -55,5 +55,3 @@ const embed = new EmbedBuilder(
 );
 
 webhookClient.send({ embeds: [embed] });
-
-// eiei
