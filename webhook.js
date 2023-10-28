@@ -10,6 +10,8 @@ require('dotenv').config();
 let tiktokUsername = process.env.tiktokUsername;
 let url_roominfo = host + '/roominfo?tiktokUsername=' + tiktokUsername;
 
+let link = 'https://www.tiktok.com/' + tiktokUsername + '/live';
+
 http.get(url_roominfo,(res) => {
     let body = "";
 
@@ -26,11 +28,11 @@ http.get(url_roominfo,(res) => {
                 {
                     color: 0xFF2BF2,
                     title: json.title,
-                    url: 'https://www.tiktok.com/' + tiktokUsername + '/live',
+                    url: link,
                     author: {
                         name: json.owner.nickname + ' is now live on Tiktok!',
                         icon_url: json.cover.url_list[0],
-                        url: 'https://www.tiktok.com/' + tiktokUsername + '/live',
+                        url: link,
                     },
                     fields: [
                         {
