@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
+const { env } = require('node:process');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
@@ -36,5 +37,6 @@ for (const folder of commandFolders) {
 	}
 }
 
-client.login(token);
+require('dotenv').config();
+client.login(token || process.env.token);
 
