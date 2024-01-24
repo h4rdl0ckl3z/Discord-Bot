@@ -2,4 +2,3 @@ node_modules/
 config.json
 webhook-config.json
 .env
-commands/events/status.js
